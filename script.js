@@ -10,7 +10,12 @@ function updateTimeline() {
   });
   const atPageEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
   if (atPageEnd) activeId = sections.at(-1).dataset.section;
-  navItems.forEach((item) => item.classList.toggle('active', item.dataset.nav === activeId));
+  navItems.forEach((item) => {
+    const isActive = item.dataset.nav === activeId;
+    item.classList.toggle('active', isActive);
+    if (isActive) item.setAttribute('aria-current', 'location');
+    else item.removeAttribute('aria-current');
+  });
 
   const start = sections[0].offsetTop;
   const end = sections.at(-1).offsetTop + sections.at(-1).offsetHeight - window.innerHeight;
