@@ -272,8 +272,8 @@ main {
   letter-spacing: .4px;
   text-transform: uppercase;
 }
-.affiliation-list article p + p { margin-top: 5px; }
-.affiliation-list article p b { color: #555; font-weight: 500; }
+.affiliation-list p + p { margin-top: 5px; }
+.affiliation-list p b { color: #555; font-weight: 500; }
 .affiliation-list h3 span { color: var(--muted); font-weight: 400; }
 
 @media (max-width: 1099px) {
